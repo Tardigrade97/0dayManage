@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .account {
+            width: 400px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="account">
+    <h1 style="text-align: center">注册</h1>
+    <form>
+        {% for foo in form %}
+            {% if foo.name == 'code' %}
+                <div class="form-group">
+                    <label for="{{ foo.id_for_label }}">{{ foo.label }}:</label>
+                    <div class="clearfix">
+                        <div class="col-lg-6" style="padding-left: 0;">{{ foo }}</div>
+                        <div class="col-lg-6"><input type="button" class="btn btn-default" value="点击获取验证码"></div>
+                    </div>
+
+                </div>
+            {% else %}
+                <div class="form-group">
+                    <label for="{{ foo.id_for_label }}">{{ foo.label }}:</label>
+                    {{ foo }}
+                </div>
+            {% endif %}
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">注册</button>
+    </form>
+</div>
+
+
+</body>
+</html>

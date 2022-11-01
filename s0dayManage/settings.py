@@ -72,10 +72,20 @@ WSGI_APPLICATION = 's0dayManage.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': '0day',
+        'USER': 'root',
+        'PASSWORD': '123456',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
@@ -120,8 +130,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 TENCENT_SMS_APP_ID = 1400758605  # 自己应用ID
-TENCENT_SMS_APP_KEY = "8cc5b87123y423423412387930004"  # 自己应用Key
-TENCENT_SMS_SIGN = "0day管理"  # 自己腾讯云创建签名时填写的签名内容（使用公众号的话这个值一般是公众号全称或简称）
+TENCENT_SMS_APP_KEY = "09c1e9921bf3035f3c2fe38775bea1b6"  # 自己应用Key
+TENCENT_SMS_SIGN = "0day管理个人公众号"  # 自己腾讯云创建签名时填写的签名内容（使用公众号的话这个值一般是公众号全称或简称）
 TENCENT_SMS_TEMPLATE = {
     'register': 1592379,
     'login': 1592133
