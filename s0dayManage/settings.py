@@ -47,6 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'web.middleware.auth.auth_middleware'
 ]
 
 ROOT_URLCONF = 's0dayManage.urls'
@@ -152,7 +153,7 @@ TENCENT_SMS_APP_KEY = "09c1e9921bf3035f3c2fe38775bea1b6"  # 自己应用Key
 TENCENT_SMS_SIGN = "0day管理个人公众号"  # 自己腾讯云创建签名时填写的签名内容（使用公众号的话这个值一般是公众号全称或简称）
 TENCENT_SMS_TEMPLATE = {
     'register': 1592379,
-    'login': 1592133
+    'login': 1594681
 }
 try:
     from .local_settings import *
